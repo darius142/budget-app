@@ -168,6 +168,11 @@
             document.querySelector(element).insertAdjacentHTML('beforeend', newHtml);
         },
 
+        deleteListItem: function(selectorID) {
+        	var el =document.qetElementById(selectorID);
+        	el.parentNode.removeChild(el);
+        },
+
         clearFields: function() {
         	var fields, fieldsArr;
 
@@ -233,6 +238,17 @@ var controller = (function(budgetCtrl, UICtrl) {
 		UICtrl.displayBudget(budget);
 	};
 
+	var updatePercentages = function() {
+
+		// 1. Calculate percentages
+
+		// 2. Read percentages from the budget controller
+
+		// 3. Update the IU with the new percentages
+		
+	};
+
+
 	var ctrlAddItem = function() {
 		var input, newItem;
 
@@ -270,8 +286,8 @@ var controller = (function(budgetCtrl, UICtrl) {
 			// 1. delete the item from the data structure
 			budgetCtrl.deleteItem(type, ID);
 
-			// 2. delete the itme from the UI
-
+			// 2. delete the item from the UI
+			UICtrl.deleteListItem(itemID);
 			// 3. update and show the new budget
 
 
